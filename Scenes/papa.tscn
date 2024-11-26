@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqtmkowjifjam"]
+
+[ext_resource type="Texture2D" uid="uid://u0i1beh7qovm" path="res://Assets/papa.png" id="1_8c8h4"]
+[ext_resource type="Script" path="res://Scripts/papa.gd" id="1_s14lc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs73p"]
+atlas = ExtResource("1_8c8h4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpri6"]
+atlas = ExtResource("1_8c8h4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7pd6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs73p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpri6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_blyxa"]
+radius = 9.0
+
+[node name="papa" type="CharacterBody2D"]
+script = ExtResource("1_s14lc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_7pd6p")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 1
+frame_progress = 0.646256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_blyxa")
