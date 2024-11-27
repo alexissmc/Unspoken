@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhpsas8vhvupw"]
+[gd_scene load_steps=13 format=3 uid="uid://bhpsas8vhvupw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_kmkwt"]
 [ext_resource type="Texture2D" uid="uid://367mupml5xew" path="res://Assets/portada.png" id="2_fg3jy"]
 [ext_resource type="FontFile" uid="uid://b5ya110t74b8r" path="res://Assets/Fonts/Pixica-Regular.ttf" id="3_o1qd0"]
 [ext_resource type="Texture2D" uid="uid://bjjeo7m11er4o" path="res://Assets/Sprites/green_overlined.png" id="3_tugrp"]
+[ext_resource type="FontFile" uid="uid://ts801iqilg8m" path="res://Assets/Fonts/PixicaMono-Bold.ttf" id="5_5fis7"]
 
 [sub_resource type="Theme" id="Theme_htpyw"]
 
@@ -36,7 +37,12 @@ texture = ExtResource("3_tugrp")
 region_rect = Rect2(14, 12, 36, 12)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8jldd"]
+line_spacing = 4.0
+font = ExtResource("5_5fis7")
+font_size = 120
 font_color = Color(0.584314, 0.894118, 0.666667, 1)
+shadow_size = 6
+shadow_color = Color(1, 1, 1, 0.65098)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -73,10 +79,10 @@ anchor_left = 0.792
 anchor_top = 0.5
 anchor_right = 0.792
 anchor_bottom = 0.5
-offset_left = -135.384
-offset_top = -39.0
-offset_right = 135.616
-offset_bottom = 235.0
+offset_left = -159.384
+offset_top = -76.0
+offset_right = 111.616
+offset_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
@@ -111,12 +117,13 @@ text = "Quit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 867.0
-offset_top = 161.0
-offset_right = 955.0
-offset_bottom = 184.0
+offset_left = 633.0
+offset_top = 100.0
+offset_right = 1158.0
+offset_bottom = 219.0
 text = "UNSPOKEN"
 label_settings = SubResource("LabelSettings_8jldd")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
