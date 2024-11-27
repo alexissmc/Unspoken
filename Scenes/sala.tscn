@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb1hqj6i5p3to"]
+
+[ext_resource type="Texture2D" uid="uid://brqnqphyo18mo" path="res://Assets/Maps/Sala.png" id="1_w52vo"]
+
+[node name="Sala" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w52vo")
