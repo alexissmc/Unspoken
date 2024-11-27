@@ -8,7 +8,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3rrr"]
 texture = ExtResource("3_g2fnt")
-region_rect = Rect2(2.52416, 165.235, 18.6603, 15.8612)
+region_rect = Rect2(3, 213, 18, 16)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -54,7 +54,6 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 
 [node name="Play" type="Button" parent="VBoxContainer"]
-texture_filter = 1
 layout_mode = 2
 theme = SubResource("Theme_htpyw")
 theme_override_font_sizes/font_size = 50
