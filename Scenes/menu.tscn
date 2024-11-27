@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crrr2a5q42rw3"]
 
-[ext_resource type="Texture2D" uid="uid://croewx8ep7f3d" path="res://Assets/header.jpg" id="1_5qpgl"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_kmkwt"]
+[ext_resource type="Texture2D" uid="uid://367mupml5xew" path="res://Assets/portada.png" id="2_fg3jy"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -28,19 +28,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5qpgl")
+texture = ExtResource("2_fg3jy")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.776
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.776
 anchor_bottom = 0.5
-offset_left = -135.0
+offset_left = -135.952
 offset_top = -32.0
-offset_right = 136.0
+offset_right = 135.048
 offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
