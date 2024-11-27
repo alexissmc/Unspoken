@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnedr8o543g4y"
-path="res://.godot/imported/Pasillo.png-b12783fa9123498e131f57fe3fc0506e.ctex"
+uid="uid://c1u75ba54sln5"
+path="res://.godot/imported/Cuarto_padres.png-627b043c378dd67f310dd2c5c0c1180b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Maps/Pasillo.png"
-dest_files=["res://.godot/imported/Pasillo.png-b12783fa9123498e131f57fe3fc0506e.ctex"]
+source_file="res://Assets/Maps/Cuarto_padres.png"
+dest_files=["res://.godot/imported/Cuarto_padres.png-627b043c378dd67f310dd2c5c0c1180b.ctex"]
 
 [params]
 
