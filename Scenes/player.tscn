@@ -110,9 +110,10 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b8m2m"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0eo61"]
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_0bby8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -123,7 +124,8 @@ frame = 1
 frame_progress = 0.251217
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_b8m2m")
+shape = SubResource("CircleShape2D_0eo61")
