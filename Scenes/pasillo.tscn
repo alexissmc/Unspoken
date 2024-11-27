@@ -1,6 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=9 format=3 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
+[ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
+[ext_resource type="PackedScene" uid="uid://btm7ito3lul2k" path="res://Scenes/player.tscn" id="3_c2p1m"]
+
+[sub_resource type="GDScript" id="GDScript_fwi68"]
+script/source = "extends Area2D
+
+# Variable para especificar la siguiente escena
+
+@onready var collision = $ColisionShape2D
+
+func _ready():
+	# Verifica si el cuerpo que entra es el jugador
+	pass
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		body.Door = true
+		collision.queue_free()
+		get_tree().change_scene_to_file(\"res://Scenes/sala.tscn\")
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f063"]
+size = Vector2(20, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bp8px"]
 size = Vector2(453, 75)
@@ -14,10 +38,20 @@ a = Vector2(207, 50)
 b = Vector2(-239, 49)
 
 [node name="Pasillo" type="Node2D"]
+position = Vector2(567, 315)
+script = ExtResource("1_mpbs7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_bcjqe")
+
+[node name="Salida_pasillo" type="Area2D" parent="."]
+script = SubResource("GDScript_fwi68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Salida_pasillo"]
+position = Vector2(-231, 17)
+shape = SubResource("RectangleShape2D_6f063")
+one_way_collision_margin = 0.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -30,3 +64,8 @@ shape = SubResource("SegmentShape2D_x50ar")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_cf38t")
+
+[node name="player" parent="." instance=ExtResource("3_c2p1m")]
+position = Vector2(4, 1)
+
+[connection signal="body_entered" from="Salida_pasillo" to="." method="_on_salida_pasillo_body_entered"]

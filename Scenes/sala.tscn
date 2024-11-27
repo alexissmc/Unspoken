@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfp3bww6ux1gq"]
+[gd_scene load_steps=9 format=3 uid="uid://cb1hqj6i5p3to"]
 
+[ext_resource type="Script" path="res://Scripts/sala.gd" id="1_08jsp"]
 [ext_resource type="Texture2D" uid="uid://brqnqphyo18mo" path="res://Assets/Maps/Sala.png" id="1_w52vo"]
-[ext_resource type="PackedScene" uid="uid://ed8754qtwvon" path="res://Scenes/player.tscn" id="2_j3yqg"]
+[ext_resource type="PackedScene" uid="uid://btm7ito3lul2k" path="res://Scenes/player.tscn" id="2_j3yqg"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="3_ujkc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2347"]
@@ -324,7 +325,11 @@ texture = ExtResource("3_ujkc2")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6o5j1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_giwr3"]
+size = Vector2(19, 58)
+
 [node name="Sala" type="Node2D"]
+script = ExtResource("1_08jsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(587, 320)
@@ -356,3 +361,11 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_sl8ey")
 format = 2
 layer_0/tile_data = PackedInt32Array(-393217, 0, 6, -327681, 0, 7)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(979.5, 352)
+shape = SubResource("RectangleShape2D_giwr3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

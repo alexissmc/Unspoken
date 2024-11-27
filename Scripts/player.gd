@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var Door = false
+
 # Velocidad de movimiento
 @export var speed: float = 200.0
 
@@ -7,6 +9,9 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta):
+	
+	Open_Door()
+	
 	# Inicializar un vector de dirección para el movimiento
 	var direction = Vector2.ZERO
 
@@ -37,3 +42,8 @@ func _physics_process(delta):
 	else:
 		# Detener la animación si no hay movimiento
 		sprite.stop()
+		
+func Open_Door():
+	if Door == true:
+		set_physics_process(false)
+		Door = false
