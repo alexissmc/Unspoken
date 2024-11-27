@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfp3bww6ux1gq"]
+[gd_scene load_steps=16 format=3 uid="uid://dfp3bww6ux1gq"]
 
 [ext_resource type="Script" path="res://Scripts/sala.gd" id="1_exy8o"]
 [ext_resource type="Texture2D" uid="uid://brqnqphyo18mo" path="res://Assets/Maps/Sala.png" id="1_w52vo"]
@@ -897,6 +897,9 @@ sources/3 = SubResource("TileSetAtlasSource_id1od")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43213"]
 size = Vector2(20, 67)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxigw"]
+size = Vector2(43, 68)
+
 [node name="Sala" type="Node2D"]
 script = ExtResource("1_exy8o")
 
@@ -941,4 +944,11 @@ layer_2/tile_data = PackedInt32Array(327673, 851971, 0, 393209, 851971, 1, -1966
 position = Vector2(984, 349)
 shape = SubResource("RectangleShape2D_43213")
 
+[node name="Salidasala" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Salidasala"]
+position = Vector2(175, 349)
+shape = SubResource("RectangleShape2D_mxigw")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Salidasala" to="." method="_on_salidasala_body_entered"]
