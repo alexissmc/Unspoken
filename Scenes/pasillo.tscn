@@ -66,6 +66,6 @@ shape = SubResource("SegmentShape2D_x50ar")
 shape = SubResource("SegmentShape2D_cf38t")
 
 [node name="player" parent="." instance=ExtResource("3_c2p1m")]
-position = Vector2(-203, 1)
+position = Vector2(165, -6)
 
 [connection signal="body_entered" from="Salida_pasillo" to="." method="_on_salida_pasillo_body_entered"]
