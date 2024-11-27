@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://crrr2a5q42rw3"]
+[gd_scene load_steps=6 format=3 uid="uid://bhpsas8vhvupw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_kmkwt"]
 [ext_resource type="Texture2D" uid="uid://367mupml5xew" path="res://Assets/portada.png" id="2_fg3jy"]
+[ext_resource type="Texture2D" uid="uid://b2a7x8vbyy2mn" path="res://Assets/Sprites/ui_elements122.png" id="3_g2fnt"]
+
+[sub_resource type="Theme" id="Theme_htpyw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3rrr"]
+texture = ExtResource("3_g2fnt")
+region_rect = Rect2(2.52416, 165.235, 18.6603, 15.8612)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -47,8 +54,11 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 
 [node name="Play" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
+theme = SubResource("Theme_htpyw")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3rrr")
 text = "Play"
 
 [node name="Options" type="Button" parent="VBoxContainer"]

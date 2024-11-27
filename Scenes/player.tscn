@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://btm7ito3lul2k"]
+[gd_scene load_steps=17 format=3 uid="uid://ed8754qtwvon"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_0bby8"]
 [ext_resource type="Texture2D" uid="uid://b37ym15igh65v" path="res://Assets/Characters/dianita.png" id="2_felt4"]
