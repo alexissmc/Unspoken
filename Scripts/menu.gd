@@ -1,11 +1,11 @@
 extends Control
 
-func _on_texture_rect_mouse_entered() -> void:
-	
+func _on_play_mouse_entered() -> void:
+	$Buttonsound.play()
 	pass # Replace with function body.
 
 func _on_play_pressed() -> void:
-	$Buttonsound.play()
+	
 	get_tree().change_scene_to_file("res://Scenes/pasillo.tscn")
 	
 	pass # Replace with function body.
