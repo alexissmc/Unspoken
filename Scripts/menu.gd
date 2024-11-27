@@ -3,6 +3,7 @@ extends Control
 
 
 func _on_play_pressed() -> void:
+	$Buttonsound.play()
 	pass # Replace with function body.
 
 
