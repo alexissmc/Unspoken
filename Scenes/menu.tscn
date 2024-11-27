@@ -1,24 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhpsas8vhvupw"]
+[gd_scene load_steps=12 format=3 uid="uid://bhpsas8vhvupw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_kmkwt"]
 [ext_resource type="Texture2D" uid="uid://367mupml5xew" path="res://Assets/portada.png" id="2_fg3jy"]
+[ext_resource type="FontFile" uid="uid://b5ya110t74b8r" path="res://Assets/Fonts/Pixica-Regular.ttf" id="3_o1qd0"]
 [ext_resource type="Texture2D" uid="uid://bjjeo7m11er4o" path="res://Assets/Sprites/green_overlined.png" id="3_tugrp"]
 
 [sub_resource type="Theme" id="Theme_htpyw"]
 
-[sub_resource type="SystemFont" id="SystemFont_oyrgb"]
-font_names = PackedStringArray("Consolas")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3rrr"]
 content_margin_left = 16.0
-content_margin_top = 16.0
+content_margin_top = 10.0
 content_margin_right = 16.0
 content_margin_bottom = 16.0
 texture = ExtResource("3_tugrp")
 region_rect = Rect2(14, 12, 36, 12)
 
-[sub_resource type="SystemFont" id="SystemFont_bhqog"]
-font_names = PackedStringArray("Consolas")
+[sub_resource type="Theme" id="Theme_pkisk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ww0ao"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("3_tugrp")
+region_rect = Rect2(14, 12, 36, 12)
+
+[sub_resource type="Theme" id="Theme_ovjx0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxxda"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("3_tugrp")
+region_rect = Rect2(14, 12, 36, 12)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jldd"]
+font_color = Color(0.584314, 0.894118, 0.666667, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -51,14 +69,14 @@ expand_mode = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.776
+anchor_left = 0.792
 anchor_top = 0.5
-anchor_right = 0.776
+anchor_right = 0.792
 anchor_bottom = 0.5
-offset_left = -135.952
-offset_top = -32.0
-offset_right = 135.048
-offset_bottom = 228.0
+offset_left = -135.384
+offset_top = -39.0
+offset_right = 135.616
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
@@ -67,21 +85,38 @@ theme_override_constants/separation = 14
 layout_mode = 2
 theme = SubResource("Theme_htpyw")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_oyrgb")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_o1qd0")
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_p3rrr")
-text = "Play"
+text = "Start
+"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_bhqog")
-theme_override_font_sizes/font_size = 50
+theme = SubResource("Theme_pkisk")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o1qd0")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_ww0ao")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme = SubResource("Theme_ovjx0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o1qd0")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_yxxda")
 text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 161.0
+offset_right = 955.0
+offset_bottom = 184.0
+text = "UNSPOKEN"
+label_settings = SubResource("LabelSettings_8jldd")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -907,7 +907,7 @@ texture = ExtResource("1_w52vo")
 
 [node name="player" parent="." instance=ExtResource("2_j3yqg")]
 z_index = 5
-position = Vector2(752, 335)
+position = Vector2(952, 335)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
