@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
-[ext_resource type="PackedScene" uid="uid://btm7ito3lul2k" path="res://Scenes/player.tscn" id="3_c2p1m"]
+[ext_resource type="PackedScene" uid="uid://ed8754qtwvon" path="res://Scenes/player.tscn" id="3_c2p1m"]
 
 [sub_resource type="GDScript" id="GDScript_fwi68"]
 script/source = "extends Area2D
