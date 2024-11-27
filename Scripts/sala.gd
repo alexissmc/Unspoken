@@ -1,7 +1,7 @@
 extends Node2D
 
 # Usamos preload para cargar la escena
-var change_scene = preload("res://Scenes/pasillo.tscn")
+var change_scene = load("res://Scenes/pasillo.tscn")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	# Cambiamos la escena usando la ruta del archivo directamente
