@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=13 format=3 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
@@ -37,6 +37,10 @@ b = Vector2(209, 50)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_cf38t"]
 a = Vector2(207, 50)
 b = Vector2(-239, 49)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1wh1j"]
+a = Vector2(-240, -16)
+b = Vector2(-239, 48)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbkot"]
 texture = ExtResource("4_m3vb3")
@@ -271,6 +275,9 @@ shape = SubResource("SegmentShape2D_x50ar")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_cf38t")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_1wh1j")
 
 [node name="player" parent="." instance=ExtResource("3_c2p1m")]
 position = Vector2(317, -6)
