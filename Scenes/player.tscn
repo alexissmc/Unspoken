@@ -114,15 +114,15 @@ animations = [{
 radius = 4.66667
 
 [node name="player" type="CharacterBody2D"]
+z_index = 4
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_0bby8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_13g0u")
-animation = &"walk_right"
-frame = 1
-frame_progress = 0.251217
+animation = &"walk_left"
+autoplay = "walk_left"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
