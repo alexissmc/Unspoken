@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/for_six_months_I_couldn_t_sleep__Among_The_Sl
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

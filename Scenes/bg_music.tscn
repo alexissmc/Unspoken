@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3fuywbvoaauj"]
+
+[ext_resource type="AudioStream" uid="uid://d0sk523o5htd1" path="res://Assets/Music/for_six_months_I_couldn_t_sleep__Among_The_Sleep_Au___Solarballs_[_YouConvert.net_].mp3" id="1_va0pr"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_va0pr")
+autoplay = true
