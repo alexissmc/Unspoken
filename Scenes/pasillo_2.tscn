@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buqrx8kb1hrxp"]
+[gd_scene load_steps=15 format=3 uid="uid://ctkuqenvkbinf"]
 
 [ext_resource type="Script" path="res://Scripts/pasillo_2.gd" id="1_ax6tk"]
 [ext_resource type="Texture2D" uid="uid://d312ffm62e3ml" path="res://Assets/Maps/Pasillo2.png" id="2_tktp0"]
@@ -15,6 +15,15 @@ b = Vector2(-203, 51)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_cibhw"]
 a = Vector2(239, -17)
 b = Vector2(239, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45gx3"]
+size = Vector2(138, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvmh0"]
+size = Vector2(59, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmh7x"]
+size = Vector2(60, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsqdf"]
 size = Vector2(20, 67)
@@ -222,6 +231,9 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_82xwh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnthj"]
+size = Vector2(25, 41)
+
 [node name="Pasillo2" type="Node2D"]
 position = Vector2(558, 322)
 script = ExtResource("1_ax6tk")
@@ -241,6 +253,18 @@ shape = SubResource("SegmentShape2D_s4wsh")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_cibhw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(169, -28)
+shape = SubResource("RectangleShape2D_45gx3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(30, -49)
+shape = SubResource("RectangleShape2D_hvmh0")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-128, -50)
+shape = SubResource("RectangleShape2D_dmh7x")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -263,4 +287,11 @@ layer_2/y_sort_enabled = true
 layer_2/z_index = 1
 metadata/_edit_group_ = true
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(79, -34)
+shape = SubResource("RectangleShape2D_pnthj")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
