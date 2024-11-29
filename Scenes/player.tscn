@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://ed8754qtwvon"]
+[gd_scene load_steps=18 format=3 uid="uid://ed8754qtwvon"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_0bby8"]
 [ext_resource type="Texture2D" uid="uid://b37ym15igh65v" path="res://Assets/Characters/dianita.png" id="2_felt4"]
+[ext_resource type="Texture2D" uid="uid://bow8rxt8gh2j8" path="res://Circular 1 - 128x128.png" id="3_jwimw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_34j1l"]
 atlas = ExtResource("2_felt4")
@@ -130,3 +131,9 @@ zoom = Vector2(2.5, 2.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11.3333)
 shape = SubResource("CircleShape2D_0eo61")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 1.84
+range_z_min = -300
+range_z_max = 300
+texture = ExtResource("3_jwimw")

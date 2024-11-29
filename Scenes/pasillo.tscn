@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=14 format=3 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
@@ -41,6 +41,8 @@ b = Vector2(-239, 49)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1wh1j"]
 a = Vector2(-240, -16)
 b = Vector2(-239, 48)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lmi67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eaq1n"]
 texture = ExtResource("4_fpr0q")
@@ -217,6 +219,7 @@ position = Vector2(260, 328)
 script = ExtResource("1_mpbs7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.37918, 0.37918, 0.37918, 1)
 position = Vector2(146.5, -3.00002)
 scale = Vector2(1.94583, 1.9375)
 texture = ExtResource("1_bcjqe")
@@ -247,9 +250,11 @@ shape = SubResource("SegmentShape2D_cf38t")
 shape = SubResource("SegmentShape2D_1wh1j")
 
 [node name="player" parent="." instance=ExtResource("3_c2p1m")]
+material = SubResource("CanvasItemMaterial_lmi67")
 position = Vector2(317, -6)
 
 [node name="TileMap" type="TileMap" parent="."]
+modulate = Color(0.37918, 0.37918, 0.37918, 1)
 position = Vector2(0, -7)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_1p3l7")
