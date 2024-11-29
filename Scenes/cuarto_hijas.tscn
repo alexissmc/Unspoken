@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkjdtpcu0t0w0"]
+
+[ext_resource type="Texture2D" uid="uid://b7l06bugshspf" path="res://Assets/Maps/Cuarto_hijas.png" id="1_441aw"]
+
+[node name="Cuarto_hijas" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(562, 355)
+scale = Vector2(2, 2)
+texture = ExtResource("1_441aw")
