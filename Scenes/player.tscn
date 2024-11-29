@@ -125,7 +125,7 @@ animation = &"walk_left"
 autoplay = "walk_left"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
+zoom = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11.3333)
