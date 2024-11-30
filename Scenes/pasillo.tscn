@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=14 format=4 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
@@ -98,6 +98,7 @@ texture = ExtResource("4_fpr0q")
 7:4/0 = 0
 8:4/0 = 0
 9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.176776, -8, 8, -8, 8, 8, 0.176776, 8)
 10:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
@@ -109,6 +110,7 @@ texture = ExtResource("4_fpr0q")
 7:5/0 = 0
 8:5/0 = 0
 9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.176776, -8, 8, -8, 8, 8, 0.176776, 8)
 10:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
@@ -259,12 +261,22 @@ position = Vector2(0, -7)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_1p3l7")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65526, 589824, 4, 10, 589824, 5)
-layer_1/name = "Layer1"
-layer_1/tile_data = PackedInt32Array(-131071, 524288, 4, -65535, 524288, 5, -65531, 393216, 12, -65530, 458752, 12, -65529, 524288, 12, -131066, 524288, 8)
-layer_2/name = "Layer2"
-layer_2/y_sort_enabled = true
-layer_2/z_index = 1
 metadata/_edit_group_ = true
+
+[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAKAP//AAAJAAQAAAAKAAAAAAAJAAUAAAA=")
+tile_set = SubResource("TileSet_1p3l7")
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAP7/AAAIAAQAAAABAP//AAAIAAUAAAAFAP//AAAGAAwAAAAGAP//AAAHAAwAAAAHAP//AAAIAAwAAAAGAP7/AAAIAAgAAAA=")
+tile_set = SubResource("TileSet_1p3l7")
+
+[node name="Layer2" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+y_sort_enabled = true
+use_parent_material = true
+tile_set = SubResource("TileSet_1p3l7")
 
 [connection signal="body_entered" from="Salida_pasillo" to="." method="_on_salida_pasillo_body_entered"]
