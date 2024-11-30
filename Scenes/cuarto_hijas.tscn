@@ -589,11 +589,13 @@ sources/2 = SubResource("TileSetAtlasSource_2sdjf")
 [node name="Cuarto_hijas" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.294118, 0.294118, 0.294118, 1)
 position = Vector2(562, 355)
 scale = Vector2(2, 2)
 texture = ExtResource("1_441aw")
 
 [node name="TileMap" type="TileMap" parent="Sprite2D"]
+modulate = Color(0.294118, 0.294118, 0.294118, 1)
 position = Vector2(0, -9)
 tile_set = SubResource("TileSet_py3qh")
 format = 2
