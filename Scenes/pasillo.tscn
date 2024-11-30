@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=16 format=4 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
 [ext_resource type="PackedScene" uid="uid://ed8754qtwvon" path="res://Scenes/player.tscn" id="3_c2p1m"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="4_fpr0q"]
+[ext_resource type="Texture2D" uid="uid://ch7fmtg3nfr5n" path="res://Assets/Sprites/Inside.png" id="5_j54yk"]
 
 [sub_resource type="GDScript" id="GDScript_fwi68"]
 script/source = "extends Area2D
@@ -211,10 +212,70 @@ texture = ExtResource("4_fpr0q")
 9:15/0 = 0
 10:15/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3b2u7"]
+texture = ExtResource("5_j54yk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_1p3l7"]
 physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_eaq1n")
+sources/1 = SubResource("TileSetAtlasSource_3b2u7")
 
 [node name="Pasillo" type="Node2D"]
 position = Vector2(260, 328)
@@ -263,17 +324,17 @@ tile_set = SubResource("TileSet_1p3l7")
 format = 2
 metadata/_edit_group_ = true
 
-[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAKAP//AAAJAAQAAAAKAAAAAAAJAAUAAAA=")
 tile_set = SubResource("TileSet_1p3l7")
 
-[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+[node name="Layer2" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAABAP7/AAAIAAQAAAABAP//AAAIAAUAAAAFAP//AAAGAAwAAAAGAP//AAAHAAwAAAAHAP//AAAIAAwAAAAGAP7/AAAIAAgAAAA=")
 tile_set = SubResource("TileSet_1p3l7")
 
-[node name="Layer2" type="TileMapLayer" parent="TileMap"]
+[node name="Layer3" type="TileMapLayer" parent="TileMap"]
 z_index = 1
 y_sort_enabled = true
 use_parent_material = true
