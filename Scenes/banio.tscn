@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ht42fwoeduli"]
+[gd_scene load_steps=2 format=3 uid="uid://dbygn8lrabtac"]
 
-[ext_resource type="Texture2D" uid="uid://b7l06bugshspf" path="res://Assets/Maps/Cuarto_hijas.png" id="1_q8agw"]
+[ext_resource type="Texture2D" uid="uid://dox586ebwbx50" path="res://Assets/Maps/Banio.png" id="1_4drtc"]
 
 [node name="Banio" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(608, 345)
-texture = ExtResource("1_q8agw")
+scale = Vector2(2, 2)
+texture = ExtResource("1_4drtc")
