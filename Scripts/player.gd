@@ -5,11 +5,22 @@ var Door = false
 # Velocidad de movimiento
 @export var speed: float = 200.0
 
+# Posición inicial por defecto
+var start_position = Vector2.ZERO
+
 # Referencia al AnimatedSprite2D
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
+
+func _ready():
+	# Solo establece posición inicial si no está ya configurada
+	if position == Vector2.ZERO:
+		position = start_position
+
+func set_start_position(new_position: Vector2):
+	start_position = new_position
+	position = new_position
 
 func _physics_process(delta):
-	
 	Open_Door()
 	
 	# Inicializar un vector de dirección para el movimiento
@@ -41,7 +52,8 @@ func _physics_process(delta):
 			sprite.play("walk_up")
 	else:
 		# Detener la animación si no hay movimiento
-		sprite.stop()
+		if sprite != null:
+			sprite.stop()
 		
 func Open_Door():
 	if Door == true:

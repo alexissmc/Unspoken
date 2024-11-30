@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=14 format=4 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
-[ext_resource type="PackedScene" uid="uid://ed8754qtwvon" path="res://Scenes/player.tscn" id="3_c2p1m"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="4_fpr0q"]
 [ext_resource type="Texture2D" uid="uid://ch7fmtg3nfr5n" path="res://Assets/Sprites/Inside.png" id="5_j54yk"]
 
@@ -42,8 +41,6 @@ b = Vector2(-239, 49)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1wh1j"]
 a = Vector2(-240, -16)
 b = Vector2(-239, 48)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lmi67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eaq1n"]
 texture = ExtResource("4_fpr0q")
@@ -311,10 +308,6 @@ shape = SubResource("SegmentShape2D_cf38t")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_1wh1j")
-
-[node name="player" parent="." instance=ExtResource("3_c2p1m")]
-material = SubResource("CanvasItemMaterial_lmi67")
-position = Vector2(317, -6)
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0.37918, 0.37918, 0.37918, 1)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dfp3bww6ux1gq"]
+[gd_scene load_steps=17 format=3 uid="uid://dfp3bww6ux1gq"]
 
 [ext_resource type="Script" path="res://Scripts/sala.gd" id="1_exy8o"]
 [ext_resource type="Texture2D" uid="uid://brqnqphyo18mo" path="res://Assets/Maps/Sala.png" id="1_w52vo"]
-[ext_resource type="PackedScene" uid="uid://ed8754qtwvon" path="res://Scenes/player.tscn" id="2_j3yqg"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="3_ujkc2"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="4_o2dxt"]
 [ext_resource type="Texture2D" uid="uid://cgag03evuoqw" path="res://Assets/Sprites/outdoors.png" id="5_0gnkm"]
@@ -916,10 +915,6 @@ modulate = Color(0.294118, 0.294118, 0.294118, 1)
 position = Vector2(587, 320)
 scale = Vector2(2, 2)
 texture = ExtResource("1_w52vo")
-
-[node name="player" parent="." instance=ExtResource("2_j3yqg")]
-z_index = 5
-position = Vector2(952, 335)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

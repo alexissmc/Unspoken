@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://x74rfevycqhh"]
+[gd_scene load_steps=17 format=3 uid="uid://x74rfevycqhh"]
 
 [ext_resource type="Texture2D" uid="uid://c1u75ba54sln5" path="res://Assets/Maps/Cuarto_padres.png" id="1_lla5c"]
 [ext_resource type="Script" path="res://Scripts/cuarto_padres.gd" id="1_wmdij"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="2_73r41"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="3_jjqek"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="4_6yunt"]
-[ext_resource type="PackedScene" uid="uid://ed8754qtwvon" path="res://Scenes/player.tscn" id="5_ru1gh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fr1i6"]
 a = Vector2(130, -73)
@@ -658,8 +657,5 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-65538, 0, 11, -2, 0, 12, -65537, 65536, 11, -1, 65536, 12, -196605, 393218, 5, -131069, 393218, 6, -196604, 458754, 5, -131068, 458754, 6, -131071, 327682, 5, -65539, 327682, 5, 3, 655360, 11, 65539, 655360, 12, 65540, 262144, 10, 65538, 196608, 10)
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(-65537, 0, 11, -1, 0, 12, -131072, 65536, 11, -65536, 65536, 12)
-
-[node name="player" parent="." instance=ExtResource("5_ru1gh")]
-position = Vector2(-3, 49)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

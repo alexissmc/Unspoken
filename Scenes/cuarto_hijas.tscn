@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dxvipht3iaawf"]
+[gd_scene load_steps=11 format=4 uid="uid://dxvipht3iaawf"]
 
 [ext_resource type="Texture2D" uid="uid://b7l06bugshspf" path="res://Assets/Maps/Cuarto_hijas.png" id="1_441aw"]
+[ext_resource type="Script" path="res://Scripts/cuarto_hijas.gd" id="1_kng3k"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="2_lpdru"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="3_uuyp5"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="4_0mht7"]
@@ -586,7 +587,11 @@ sources/0 = SubResource("TileSetAtlasSource_m4owx")
 sources/1 = SubResource("TileSetAtlasSource_deyfl")
 sources/2 = SubResource("TileSetAtlasSource_2sdjf")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cmh"]
+size = Vector2(30, 14.5)
+
 [node name="Cuarto_hijas" type="Node2D"]
+script = ExtResource("1_kng3k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.294118, 0.294118, 0.294118, 1)
@@ -600,12 +605,20 @@ position = Vector2(0, -9)
 tile_set = SubResource("TileSet_py3qh")
 format = 2
 
-[node name="Layer0" type="TileMapLayer" parent="Sprite2D/TileMap"]
+[node name="Layer1" type="TileMapLayer" parent="Sprite2D/TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAP7/AAAIAAQAAAAAAP//AAAIAAUAAAD8/wEAAQAFAAUAAAADAAEAAQAFAAUAAAD//wIAAAABAAoAAAAAAAIAAAADAAoAAAA=")
 tile_set = SubResource("TileSet_py3qh")
 
-[node name="Layer1" type="TileMapLayer" parent="Sprite2D/TileMap"]
+[node name="Layer2" type="TileMapLayer" parent="Sprite2D/TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD9/wEAAAADAAsAAAD8/wEAAAACAAsAAAD8/wIAAAACAAwAAAD9/wIAAAADAAwAAAACAAEAAAAEAAsAAAACAAIAAAAEAAwAAAADAAEAAAAFAAsAAAADAAIAAAAFAAwAAAACAP7/AAAAAAIAAAACAP//AAAAAAMAAAADAP7/AAABAAIAAAADAP//AAABAAMAAAD9//7/AAAGAAEAAAD9////AAAGAAMAAAD+//7/AAAHAAEAAAD+////AAAHAAMAAAD8//7/AQAFAAYAAAD8////AQAFAAcAAAA=")
 tile_set = SubResource("TileSet_py3qh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(578, 335)
+shape = SubResource("RectangleShape2D_m3cmh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
