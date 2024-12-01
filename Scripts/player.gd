@@ -3,7 +3,7 @@ extends CharacterBody2D
 var Door = false
 
 # Velocidad de movimiento
-@export var speed: float = 200.0
+@export var speed: float = 150.0
 
 # Posición inicial por defecto
 var start_position = Vector2.ZERO

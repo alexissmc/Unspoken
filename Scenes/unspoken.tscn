@@ -1,20 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://br8mbjgxjiodk"]
-
-[ext_resource type="PackedScene" uid="uid://cqtmkowjifjam" path="res://Scenes/papa.tscn" id="1_ymai3"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1w0hb"]
+[gd_scene format=3 uid="uid://br8mbjgxjiodk"]
 
 [node name="Unspoken" type="Node2D"]
-
-[node name="papa" parent="." instance=ExtResource("1_ymai3")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-10, -2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(10, 8)
-shape = SubResource("WorldBoundaryShape2D_1w0hb")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -17)
-zoom = Vector2(4, 4)

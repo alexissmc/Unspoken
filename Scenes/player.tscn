@@ -117,18 +117,22 @@ radius = 4.66667
 [node name="player" type="CharacterBody2D"]
 z_index = 4
 scale = Vector2(1.5, 1.5)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_0bby8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_13g0u")
-animation = &"walk_left"
-autoplay = "walk_left"
+animation = &"walk_down"
+frame_progress = 0.410253
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
 position = Vector2(0, 11.3333)
 shape = SubResource("CircleShape2D_0eo61")
 
