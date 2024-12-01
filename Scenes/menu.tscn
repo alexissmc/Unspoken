@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhpsas8vhvupw"]
+[gd_scene load_steps=13 format=3 uid="uid://bhpsas8vhvupw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_kmkwt"]
 [ext_resource type="Texture2D" uid="uid://367mupml5xew" path="res://Assets/portada.png" id="2_fg3jy"]
@@ -11,16 +11,6 @@
 [sub_resource type="Theme" id="Theme_htpyw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3rrr"]
-content_margin_left = 16.0
-content_margin_top = 10.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
-texture = ExtResource("3_tugrp")
-region_rect = Rect2(14, 12, 36, 12)
-
-[sub_resource type="Theme" id="Theme_pkisk"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ww0ao"]
 content_margin_left = 16.0
 content_margin_top = 10.0
 content_margin_right = 16.0
@@ -99,15 +89,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_p3rrr")
 text = "Start
 "
 
-[node name="Options" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_pkisk")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_o1qd0")
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxTexture_ww0ao")
-text = "Options"
-
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ovjx0")
@@ -133,7 +114,18 @@ stream = ExtResource("5_a2ipa")
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("7_67v1w")]
 position = Vector2(20, 29)
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 826.0
+offset_top = 586.0
+offset_right = 2034.0
+offset_bottom = 780.0
+scale = Vector2(0.267944, 0.30764)
+text = "     Diana Cruz Delgado
+Alexis Martinez Cabañas"
+label_settings = SubResource("LabelSettings_8jldd")
+horizontal_alignment = 1
+justification_flags = 160
+
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
