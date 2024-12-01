@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c486b4ejq45of"
+path="res://.godot/imported/Efecto de sonido_ Murciélago vuelo y chillido.mp3-feacc677321ebd2c3c91850e004a5f19.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Efecto de sonido_ Murciélago vuelo y chillido.mp3"
+dest_files=["res://.godot/imported/Efecto de sonido_ Murciélago vuelo y chillido.mp3-feacc677321ebd2c3c91850e004a5f19.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
