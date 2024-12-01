@@ -115,16 +115,17 @@ stream = ExtResource("5_a2ipa")
 position = Vector2(20, 29)
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 826.0
-offset_top = 586.0
-offset_right = 2034.0
-offset_bottom = 780.0
+offset_left = 830.0
+offset_top = 557.0
+offset_right = 2038.0
+offset_bottom = 850.0
 scale = Vector2(0.267944, 0.30764)
-text = "     Diana Cruz Delgado
+text = "             Hecho por:    
+     Diana Cruz Delgado
 Alexis Martinez Cabañas"
 label_settings = SubResource("LabelSettings_8jldd")
 horizontal_alignment = 1
-justification_flags = 160
+justification_flags = 161
 
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
