@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://ht42fwoeduli"]
+[gd_scene load_steps=15 format=4 uid="uid://ht42fwoeduli"]
 
 [ext_resource type="Texture2D" uid="uid://dox586ebwbx50" path="res://Assets/Maps/Banio.png" id="1_4drtc"]
+[ext_resource type="Script" path="res://Scripts/banio.gd" id="1_5r8hq"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="2_eapd4"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="3_n04hp"]
 
@@ -274,7 +275,33 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f8oci")
 sources/1 = SubResource("TileSetAtlasSource_84vw3")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a3qst"]
+a = Vector2(626, 424)
+b = Vector2(718, 424)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2n83c"]
+a = Vector2(501, 285)
+b = Vector2(501, 424)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kcgm8"]
+a = Vector2(503, 234)
+b = Vector2(715, 234)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rydoo"]
+size = Vector2(65, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b67cu"]
+size = Vector2(67, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ko5tp"]
+a = Vector2(592, 426)
+b = Vector2(624, 426)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e281k"]
+size = Vector2(31, 20)
+
 [node name="Banio" type="Node2D"]
+script = ExtResource("1_5r8hq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.294118, 0.294118, 0.294118, 1)
@@ -288,3 +315,43 @@ texture_filter = 1
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAVAAkAAAAFAAMAAAAVAAoAAAAFAAQAAAARAAkAAAADAAMAAAASAAkAAAAEAAMAAAAUAAoAAAAEAAQAAFAQAAwAAAADAAEAAAAVAAwAAAADAAIAAAASAAgAAAAGAAEAAAA=")
 tile_set = SubResource("TileSet_0j38u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2, -4)
+shape = SubResource("SegmentShape2D_a3qst")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-127, -4)
+shape = SubResource("SegmentShape2D_a3qst")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, -5)
+shape = SubResource("SegmentShape2D_2n83c")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(206, -5)
+shape = SubResource("SegmentShape2D_2n83c")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_kcgm8")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(639.5, 294)
+shape = SubResource("RectangleShape2D_rydoo")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(542.5, 294)
+shape = SubResource("RectangleShape2D_b67cu")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_ko5tp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(608, 421)
+shape = SubResource("RectangleShape2D_e281k")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
