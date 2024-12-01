@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=16 format=4 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="4_fpr0q"]
 [ext_resource type="Texture2D" uid="uid://ch7fmtg3nfr5n" path="res://Assets/Sprites/Inside.png" id="5_j54yk"]
+[ext_resource type="PackedScene" uid="uid://yt2x7bv06jsx" path="res://Scenes/cuchillo.tscn" id="5_vtfkk"]
 
 [sub_resource type="GDScript" id="GDScript_fwi68"]
 script/source = "extends Area2D
@@ -341,6 +342,11 @@ tile_set = SubResource("TileSet_1p3l7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(48, -39)
 shape = SubResource("RectangleShape2D_ug3a1")
+
+[node name="cuchillo" parent="." instance=ExtResource("5_vtfkk")]
+position = Vector2(204, -30)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
 
 [connection signal="body_entered" from="Salida_pasillo" to="." method="_on_salida_pasillo_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
