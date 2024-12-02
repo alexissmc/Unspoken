@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfp3bww6ux1gq"]
+[gd_scene load_steps=18 format=3 uid="uid://dfp3bww6ux1gq"]
 
 [ext_resource type="Script" path="res://Scripts/sala.gd" id="1_exy8o"]
 [ext_resource type="Texture2D" uid="uid://brqnqphyo18mo" path="res://Assets/Maps/Sala.png" id="1_w52vo"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cgag03evuoqw" path="res://Assets/Sprites/outdoors.png" id="5_0gnkm"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="6_en5ie"]
 [ext_resource type="PackedScene" uid="uid://caw26dfhjubdv" path="res://Scenes/enemy.tscn" id="7_t3hjr"]
-[ext_resource type="PackedScene" uid="uid://bvri624qg088o" path="res://Scenes/ninafantasma.tscn" id="8_1qopp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2347"]
 size = Vector2(321.5, 64)
@@ -966,9 +965,6 @@ shape = SubResource("RectangleShape2D_mxigw")
 
 [node name="Enemy" parent="." instance=ExtResource("7_t3hjr")]
 position = Vector2(327, 357)
-
-[node name="ninafantasma" parent="." instance=ExtResource("8_1qopp")]
-position = Vector2(625, 343)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Salidasala" to="." method="_on_salidasala_body_entered"]
