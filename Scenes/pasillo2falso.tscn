@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctkuqenvkbinf"]
+[gd_scene load_steps=16 format=3 uid="uid://bbblp03l15iok"]
 
-[ext_resource type="Script" path="res://Scripts/pasillo_2.gd" id="1_ax6tk"]
-[ext_resource type="Texture2D" uid="uid://d312ffm62e3ml" path="res://Assets/Maps/Pasillo2.png" id="2_tktp0"]
-[ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="4_3b5bh"]
+[ext_resource type="Script" path="res://Scripts/pasillo_2.gd" id="1_ifasc"]
+[ext_resource type="Texture2D" uid="uid://d312ffm62e3ml" path="res://Assets/Maps/Pasillo2.png" id="2_8glfd"]
+[ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="3_dgjws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sen3"]
 size = Vector2(18, 143)
@@ -33,7 +33,7 @@ b = Vector2(101, 60)
 size = Vector2(20, 67)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82xwh"]
-texture = ExtResource("4_3b5bh")
+texture = ExtResource("3_dgjws")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -235,17 +235,20 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_82xwh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnthj"]
+size = Vector2(25, 41)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybt3l"]
 size = Vector2(27, 20)
 
 [node name="Pasillo2" type="Node2D"]
 position = Vector2(558, 322)
-script = ExtResource("1_ax6tk")
+script = ExtResource("1_ifasc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.294118, 0.294118, 0.294118, 1)
 scale = Vector2(2, 2)
-texture = ExtResource("2_tktp0")
+texture = ExtResource("2_8glfd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -293,6 +296,10 @@ layer_2/z_index = 1
 metadata/_edit_group_ = true
 
 [node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(79, -34)
+shape = SubResource("RectangleShape2D_pnthj")
 
 [node name="Area2D3" type="Area2D" parent="."]
 
