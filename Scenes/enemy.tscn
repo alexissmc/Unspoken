@@ -1,7 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://mb6ypfen0jtq"]
+[gd_scene load_steps=29 format=3 uid="uid://caw26dfhjubdv"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_dr3jy"]
 [ext_resource type="Texture2D" uid="uid://cjsyfyvv78roq" path="res://Assets/Sprites/Bat_Sprite_Sheet.png" id="1_okmn3"]
+[ext_resource type="AudioStream" uid="uid://t8rrc8stvw2t" path="res://Assets/Sounds/bat_chillido_vuelo.mp3" id="3_0du5e"]
+[ext_resource type="AudioStream" uid="uid://lc1fcca124do" path="res://Assets/Sounds/death_bat.mp3" id="3_igtd1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21uti"]
 atlas = ExtResource("1_okmn3")
@@ -162,7 +164,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbu1l"]
-radius = 116.349
+radius = 86.977
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t56h8"]
 size = Vector2(16, 39)
@@ -177,8 +179,8 @@ script = ExtResource("1_dr3jy")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_54n5b")
-animation = &"idle_move"
-frame_progress = 0.0115383
+animation = &"damage"
+frame_progress = 0.712333
 offset = Vector2(0, -6)
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -211,6 +213,14 @@ offset_right = 163.0
 offset_bottom = 16.0
 scale = Vector2(0.2, 0.2)
 show_percentage = false
+
+[node name="sonido2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_igtd1")
+volume_db = -21.984
+
+[node name="sonido1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0du5e")
+volume_db = 1.691
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
