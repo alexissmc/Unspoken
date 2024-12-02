@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dfp3bww6ux1gq"]
+[gd_scene load_steps=20 format=3 uid="uid://dfp3bww6ux1gq"]
 
 [ext_resource type="Script" path="res://Scripts/sala.gd" id="1_exy8o"]
 [ext_resource type="Texture2D" uid="uid://brqnqphyo18mo" path="res://Assets/Maps/Sala.png" id="1_w52vo"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="4_o2dxt"]
 [ext_resource type="Texture2D" uid="uid://cgag03evuoqw" path="res://Assets/Sprites/outdoors.png" id="5_0gnkm"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="6_en5ie"]
-[ext_resource type="PackedScene" uid="uid://mb6ypfen0jtq" path="res://Scenes/enemy.tscn" id="7_t3hjr"]
+[ext_resource type="PackedScene" uid="uid://caw26dfhjubdv" path="res://Scenes/enemy.tscn" id="7_t3hjr"]
+[ext_resource type="FontFile" uid="uid://ts801iqilg8m" path="res://Assets/Fonts/PixicaMono-Bold.ttf" id="8_80s6h"]
+[ext_resource type="Texture2D" uid="uid://bjjeo7m11er4o" path="res://Assets/Sprites/green_overlined.png" id="9_q5dow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2347"]
 size = Vector2(321.5, 64)
@@ -977,6 +979,35 @@ position = Vector2(453, 513)
 
 [node name="Enemy5" parent="." instance=ExtResource("7_t3hjr")]
 position = Vector2(653, 527)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 770.0
+offset_top = 270.0
+offset_right = 882.0
+offset_bottom = 382.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 4.0
+offset_right = 81.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("8_80s6h")
+text = "Presiona la tecla    para atacar"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(46, 14)
+texture = ExtResource("9_q5dow")
+region_enabled = true
+region_rect = Rect2(148, 65, 15, 15)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Salidasala" to="." method="_on_salidasala_body_entered"]
