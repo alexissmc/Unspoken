@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cymd0fn3pfct3"]
+
+[ext_resource type="Texture2D" uid="uid://biyy42byfliea" path="res://Assets/Characters/mother.png" id="1_q2mvy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1fm2s"]
+
+[node name="mama" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q2mvy")
+region_enabled = true
+region_rect = Rect2(36, 0, 24, 32.3174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_1fm2s")

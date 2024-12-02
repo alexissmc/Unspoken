@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://glsohodardpp"]
+
+[ext_resource type="Texture2D" uid="uid://dryx2wyenomll" path="res://Assets/Characters/papa.png" id="1_4wlmy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rg46"]
+
+[node name="papa" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4wlmy")
+region_enabled = true
+region_rect = Rect2(35, 0, 27, 32.1276)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_3rg46")
