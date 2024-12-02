@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://caw26dfhjubdv"]
+[gd_scene load_steps=27 format=3 uid="uid://mb6ypfen0jtq"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_dr3jy"]
 [ext_resource type="Texture2D" uid="uid://cjsyfyvv78roq" path="res://Assets/Sprites/Bat_Sprite_Sheet.png" id="1_okmn3"]
@@ -202,6 +202,15 @@ position = Vector2(0, -22)
 shape = SubResource("CircleShape2D_almtd")
 
 [node name="take_damage_cooldown" type="Timer" parent="."]
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0.356863, 1)
+offset_left = -17.0
+offset_top = -11.0
+offset_right = 163.0
+offset_bottom = 16.0
+scale = Vector2(0.2, 0.2)
+show_percentage = false
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
