@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=4 uid="uid://bdeasyoqqh7xe"]
+[gd_scene load_steps=18 format=4 uid="uid://bdeasyoqqh7xe"]
 
 [ext_resource type="Texture2D" uid="uid://dnedr8o543g4y" path="res://Assets/Maps/Pasillo.png" id="1_bcjqe"]
 [ext_resource type="Script" path="res://Scripts/pasillo.gd" id="1_mpbs7"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="4_fpr0q"]
 [ext_resource type="Texture2D" uid="uid://ch7fmtg3nfr5n" path="res://Assets/Sprites/Inside.png" id="5_j54yk"]
+[ext_resource type="FontFile" uid="uid://ts801iqilg8m" path="res://Assets/Fonts/PixicaMono-Bold.ttf" id="5_m3vbh"]
+[ext_resource type="Texture2D" uid="uid://bjjeo7m11er4o" path="res://Assets/Sprites/green_overlined.png" id="6_caeq6"]
+[ext_resource type="FontFile" uid="uid://b5ya110t74b8r" path="res://Assets/Fonts/Pixica-Regular.ttf" id="6_n5gqr"]
 
 [sub_resource type="GDScript" id="GDScript_fwi68"]
 script/source = "extends Area2D
@@ -345,10 +348,110 @@ shape = SubResource("RectangleShape2D_ug3a1")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 380.0
-offset_top = -80.0
-offset_right = 492.0
-offset_bottom = 32.0
+offset_left = 390.0
+offset_top = -88.0
+offset_right = 502.0
+offset_bottom = 24.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 47.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("5_m3vbh")
+text = "Usa las flechas 
+para moverte"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(16, 48)
+texture = ExtResource("6_caeq6")
+region_enabled = true
+region_rect = Rect2(166, 30, 15, 15)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control"]
+position = Vector2(16, 96)
+texture = ExtResource("6_caeq6")
+region_enabled = true
+region_rect = Rect2(166, 83, 15, 15)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Control"]
+position = Vector2(16, 120)
+texture = ExtResource("6_caeq6")
+region_enabled = true
+region_rect = Rect2(166, 48, 15, 15)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Control"]
+position = Vector2(16, 72)
+texture = ExtResource("6_caeq6")
+region_enabled = true
+region_rect = Rect2(166, 65, 15, 15)
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 88.0
+offset_right = 55.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_n5gqr")
+text = "Izquierda"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 64.0
+offset_right = 55.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_n5gqr")
+text = "Abajo"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 40.0
+offset_right = 55.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_n5gqr")
+text = "Arriba
+"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 112.0
+offset_right = 55.0
+offset_bottom = 141.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_n5gqr")
+text = "Derecha"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Salida_pasillo" to="." method="_on_salida_pasillo_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
