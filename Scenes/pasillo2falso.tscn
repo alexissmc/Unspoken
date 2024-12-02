@@ -246,7 +246,7 @@ position = Vector2(558, 322)
 script = ExtResource("1_ifasc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.294118, 0.294118, 0.294118, 1)
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("2_8glfd")
 
@@ -283,7 +283,7 @@ position = Vector2(244, 17)
 shape = SubResource("RectangleShape2D_vsqdf")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(0.294118, 0.294118, 0.294118, 1)
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
 position = Vector2(0, -7)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_e87wf")

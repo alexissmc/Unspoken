@@ -160,9 +160,10 @@ position = Vector2(0, 11.3333)
 shape = SubResource("CircleShape2D_0eo61")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.75, 0.75)
 energy = 1.84
-range_z_min = -300
-range_z_max = 300
+range_z_min = -200
+range_z_max = 200
 texture = ExtResource("3_jwimw")
 
 [node name="player_hitbox" type="Area2D" parent="."]

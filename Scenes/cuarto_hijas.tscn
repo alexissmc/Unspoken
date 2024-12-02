@@ -603,7 +603,7 @@ sources/2 = SubResource("TileSetAtlasSource_2sdjf")
 script = ExtResource("1_kng3k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.294118, 0.294118, 0.294118, 1)
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
 position = Vector2(562, 355)
 scale = Vector2(2, 2)
 texture = ExtResource("1_441aw")
@@ -634,7 +634,7 @@ position = Vector2(578, 335)
 shape = SubResource("RectangleShape2D_m3cmh")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(0.294118, 0.294118, 0.294118, 1)
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
 position = Vector2(562, 337)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_py3qh")

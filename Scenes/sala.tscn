@@ -912,7 +912,7 @@ size = Vector2(43, 68)
 script = ExtResource("1_exy8o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.294118, 0.294118, 0.294118, 1)
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
 position = Vector2(587, 320)
 scale = Vector2(2, 2)
 texture = ExtResource("1_w52vo")
@@ -939,7 +939,7 @@ position = Vector2(189, 350)
 shape = SubResource("SegmentShape2D_641qo")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(0.294118, 0.294118, 0.294118, 1)
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
 texture_filter = 1
 position = Vector2(602, 306)
 scale = Vector2(2, 2)
