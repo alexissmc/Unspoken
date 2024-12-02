@@ -67,7 +67,7 @@ script = ExtResource("1_kox5p")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_b2m42")
 animation = &"down"
-frame_progress = 0.730365
+frame_progress = 0.41377
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2
