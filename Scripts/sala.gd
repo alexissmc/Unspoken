@@ -14,5 +14,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_salidasala_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		#get_tree().change_scene_to_file(pasillo2_scene.resource_path)
-		Transicion.change_scene("res://Scenes/pasillo_2.tscn", Vector2(211, 8))
+		Transicion.change_scene("res://Scenes/pasillo_2.tscn", Vector2(200, 8))
 	pass # Replace with function body.

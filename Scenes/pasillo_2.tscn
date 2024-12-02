@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctkuqenvkbinf"]
+[gd_scene load_steps=16 format=3 uid="uid://ctkuqenvkbinf"]
 
 [ext_resource type="Script" path="res://Scripts/pasillo_2.gd" id="1_ax6tk"]
 [ext_resource type="Texture2D" uid="uid://d312ffm62e3ml" path="res://Assets/Maps/Pasillo2.png" id="2_tktp0"]
@@ -28,6 +28,9 @@ b = Vector2(237, 52)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_m7sc3"]
 a = Vector2(62, 60)
 b = Vector2(101, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nweja"]
+size = Vector2(10, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsqdf"]
 size = Vector2(20, 67)
@@ -272,6 +275,10 @@ shape = SubResource("SegmentShape2D_m51cv")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_m7sc3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(229, 16.5)
+shape = SubResource("RectangleShape2D_nweja")
 
 [node name="Area2D" type="Area2D" parent="."]
 
