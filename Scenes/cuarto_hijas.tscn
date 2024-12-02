@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://dxvipht3iaawf"]
+[gd_scene load_steps=14 format=4 uid="uid://dxvipht3iaawf"]
 
 [ext_resource type="Texture2D" uid="uid://b7l06bugshspf" path="res://Assets/Maps/Cuarto_hijas.png" id="1_441aw"]
 [ext_resource type="Script" path="res://Scripts/cuarto_hijas.gd" id="1_kng3k"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="2_lpdru"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="3_uuyp5"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="4_0mht7"]
+[ext_resource type="PackedScene" uid="uid://b18nxkek63oe6" path="res://Scenes/llave.tscn" id="6_e1aoo"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ky120"]
 a = Vector2(432, 279)
@@ -633,7 +634,7 @@ format = 2
 
 [node name="Layer1" type="TileMapLayer" parent="Sprite2D/TileMap"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAP7/AAAIAAQAAAAAAP//AAAIAAUAAAD8/wEAAQAFAAUAAAADAAEAAQAFAAUAAAD//wIAAAABAAoAAAAAAAIAAAADAAoAAAA=")
+tile_map_data = PackedByteArray("AAAAAP7/AAAIAAQAAAAAAP//AAAIAAUAAAD8/wEAAQAFAAUAAAADAAEAAQAFAAUAAAD+/wIAAAABAAoAAAABAAEAAAAKAAsAAAABAAIAAAAKAAwAAAA=")
 tile_set = SubResource("TileSet_py3qh")
 
 [node name="Layer2" type="TileMapLayer" parent="Sprite2D/TileMap"]
@@ -646,5 +647,9 @@ tile_set = SubResource("TileSet_py3qh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(578, 335)
 shape = SubResource("RectangleShape2D_m3cmh")
+
+[node name="llave" parent="." instance=ExtResource("6_e1aoo")]
+position = Vector2(563, 417)
+scale = Vector2(0.7, 0.7)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
