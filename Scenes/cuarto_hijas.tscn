@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://dxvipht3iaawf"]
+[gd_scene load_steps=17 format=4 uid="uid://dxvipht3iaawf"]
 
 [ext_resource type="Texture2D" uid="uid://b7l06bugshspf" path="res://Assets/Maps/Cuarto_hijas.png" id="1_441aw"]
 [ext_resource type="Script" path="res://Scripts/cuarto_hijas.gd" id="1_kng3k"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="2_lpdru"]
+[ext_resource type="PackedScene" uid="uid://ed8754qtwvon" path="res://Scenes/player.tscn" id="3_ed1in"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="3_uuyp5"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="4_0mht7"]
 [ext_resource type="PackedScene" path="res://Scenes/llave.tscn" id="6_e1aoo"]
 [ext_resource type="FontFile" uid="uid://ts801iqilg8m" path="res://Assets/Fonts/PixicaMono-Bold.ttf" id="7_l2y4b"]
+[ext_resource type="PackedScene" uid="uid://b63t05w75o05i" path="res://Scenes/ninafantasma.tscn" id="8_y1srx"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ky120"]
 a = Vector2(432, 279)
@@ -663,5 +665,11 @@ theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
 theme_override_fonts/font = ExtResource("7_l2y4b")
 text = "Toma la llave y huye..."
 horizontal_alignment = 1
+
+[node name="ninafantasma" parent="." instance=ExtResource("8_y1srx")]
+position = Vector2(447, 350)
+
+[node name="player" parent="." instance=ExtResource("3_ed1in")]
+position = Vector2(671, 367)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
