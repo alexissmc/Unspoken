@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://mb6ypfen0jtq"]
+[gd_scene load_steps=27 format=3 uid="uid://caw26dfhjubdv"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_dr3jy"]
 [ext_resource type="Texture2D" uid="uid://cjsyfyvv78roq" path="res://Assets/Sprites/Bat_Sprite_Sheet.png" id="1_okmn3"]
@@ -203,5 +203,3 @@ shape = SubResource("CircleShape2D_almtd")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
-[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
