@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://caw26dfhjubdv"]
+[gd_scene load_steps=27 format=3 uid="uid://mb6ypfen0jtq"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_dr3jy"]
 [ext_resource type="Texture2D" uid="uid://cjsyfyvv78roq" path="res://Assets/Sprites/Bat_Sprite_Sheet.png" id="1_okmn3"]
