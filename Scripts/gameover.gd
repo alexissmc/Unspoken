@@ -18,5 +18,5 @@ func _on_play_pressed() -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	pass # Replace with function body.

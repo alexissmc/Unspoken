@@ -108,7 +108,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_74jnx")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_g2qfr")
-text = "Quit"
+text = "Menu"
 script = ExtResource("5_ybc0i")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Quit" method="_on_play_pressed"]
