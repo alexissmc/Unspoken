@@ -1,17 +1,22 @@
-[gd_scene load_steps=13 format=4 uid="uid://dxvipht3iaawf"]
+[gd_scene load_steps=15 format=4 uid="uid://dxvipht3iaawf"]
 
 [ext_resource type="Texture2D" uid="uid://b7l06bugshspf" path="res://Assets/Maps/Cuarto_hijas.png" id="1_441aw"]
 [ext_resource type="Script" path="res://Scripts/cuarto_hijas.gd" id="1_kng3k"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="2_lpdru"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="3_uuyp5"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="4_0mht7"]
+[ext_resource type="PackedScene" uid="uid://b18nxkek63oe6" path="res://Scenes/llave.tscn" id="6_e1aoo"]
+[ext_resource type="FontFile" uid="uid://ts801iqilg8m" path="res://Assets/Fonts/PixicaMono-Bold.ttf" id="7_l2y4b"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ky120"]
 a = Vector2(432, 279)
 b = Vector2(434, 433)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0m0v"]
-size = Vector2(262, 62.5)
+size = Vector2(262, 30.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cmh"]
+size = Vector2(30, 14.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4owx"]
 texture = ExtResource("2_lpdru")
@@ -594,9 +599,6 @@ sources/0 = SubResource("TileSetAtlasSource_m4owx")
 sources/1 = SubResource("TileSetAtlasSource_deyfl")
 sources/2 = SubResource("TileSetAtlasSource_2sdjf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cmh"]
-size = Vector2(30, 14.5)
-
 [node name="Cuarto_hijas" type="Node2D"]
 script = ExtResource("1_kng3k")
 
@@ -622,29 +624,44 @@ position = Vector2(564, 291)
 shape = SubResource("RectangleShape2D_u0m0v")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(562, 464)
+position = Vector2(562, 480.125)
 shape = SubResource("RectangleShape2D_u0m0v")
-
-[node name="TileMap" type="TileMap" parent="Sprite2D"]
-modulate = Color(0.294118, 0.294118, 0.294118, 1)
-position = Vector2(0, -9)
-tile_set = SubResource("TileSet_py3qh")
-format = 2
-
-[node name="Layer1" type="TileMapLayer" parent="Sprite2D/TileMap"]
-use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAP7/AAAIAAQAAAAAAP//AAAIAAUAAAD8/wEAAQAFAAUAAAADAAEAAQAFAAUAAAD//wIAAAABAAoAAAAAAAIAAAADAAoAAAA=")
-tile_set = SubResource("TileSet_py3qh")
-
-[node name="Layer2" type="TileMapLayer" parent="Sprite2D/TileMap"]
-use_parent_material = true
-tile_map_data = PackedByteArray("AAD9/wEAAAADAAsAAAD8/wEAAAACAAsAAAD8/wIAAAACAAwAAAD9/wIAAAADAAwAAAACAAEAAAAEAAsAAAACAAIAAAAEAAwAAAADAAEAAAAFAAsAAAADAAIAAAAFAAwAAAACAP7/AAAAAAIAAAACAP//AAAAAAMAAAADAP7/AAABAAIAAAADAP//AAABAAMAAAD9//7/AAAGAAEAAAD9////AAAGAAMAAAD+//7/AAAHAAEAAAD+////AAAHAAMAAAD8//7/AQAFAAYAAAD8////AQAFAAcAAAA=")
-tile_set = SubResource("TileSet_py3qh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(578, 335)
 shape = SubResource("RectangleShape2D_m3cmh")
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color(0.294118, 0.294118, 0.294118, 1)
+position = Vector2(562, 337)
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_py3qh")
+format = 2
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAP7/AAAIAAQAAAAAAP//AAAIAAUAAAD8/wIAAQAFAAUAAAD+/wMAAAABAAoAAAABAAIAAAAKAAsAAAABAAMAAAAKAAwAAAADAAIAAQAFAAUAAAA=")
+tile_set = SubResource("TileSet_py3qh")
+
+[node name="Layer2" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAACAP7/AAAAAAIAAAACAP//AAAAAAMAAAADAP7/AAABAAIAAAADAP//AAABAAMAAAD9//7/AAAGAAEAAAD9////AAAGAAMAAAD+//7/AAAHAAEAAAD+////AAAHAAMAAAD8//7/AQAFAAYAAAD8////AQAFAAcAAAD8/wIAAAACAAsAAAD9/wIAAAADAAsAAAD8/wMAAAACAAwAAAD9/wMAAAADAAwAAAACAAIAAAAEAAsAAAADAAIAAAAFAAsAAAACAAMAAAAEAAwAAAADAAMAAAAFAAwAAAA=")
+tile_set = SubResource("TileSet_py3qh")
+
+[node name="llave" parent="." instance=ExtResource("6_e1aoo")]
+position = Vector2(562, 452)
+scale = Vector2(0.7, 0.7)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 488.0
+offset_top = 227.0
+offset_right = 649.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("7_l2y4b")
+text = "Toma la llave y huye..."
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
