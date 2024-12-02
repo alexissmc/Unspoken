@@ -164,8 +164,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbu1l"]
 radius = 116.349
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fcv1q"]
-radius = 6.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t56h8"]
+size = Vector2(16, 39)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_almtd"]
 radius = 22.0227
@@ -192,8 +192,8 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_tbu1l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_fcv1q")
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_t56h8")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
