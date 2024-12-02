@@ -1,8 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://ed8754qtwvon"]
+[gd_scene load_steps=22 format=3 uid="uid://ed8754qtwvon"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_0bby8"]
 [ext_resource type="Texture2D" uid="uid://b37ym15igh65v" path="res://Assets/Characters/dianita.png" id="2_felt4"]
+[ext_resource type="Texture2D" uid="uid://dh3jqd6k6y8a6" path="res://Assets/Sprites/dianafight.png" id="2_rr2d5"]
 [ext_resource type="Texture2D" uid="uid://bow8rxt8gh2j8" path="res://Circular 1 - 128x128.png" id="3_jwimw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is8bm"]
+atlas = ExtResource("2_rr2d5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohw8j"]
+atlas = ExtResource("2_rr2d5")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_34j1l"]
 atlas = ExtResource("2_felt4")
@@ -54,6 +63,17 @@ region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_13g0u"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is8bm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohw8j")
+}],
+"loop": true,
+"name": &"fight",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_34j1l")
@@ -114,6 +134,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0eo61"]
 radius = 4.66667
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1r4mh"]
+radius = 20.7096
+
 [node name="player" type="CharacterBody2D"]
 z_index = 4
 scale = Vector2(1.5, 1.5)
@@ -125,7 +148,8 @@ script = ExtResource("1_0bby8")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_13g0u")
 animation = &"walk_down"
-frame_progress = 0.410253
+autoplay = "walk_down"
+frame_progress = 0.417114
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -141,3 +165,14 @@ energy = 1.84
 range_z_min = -300
 range_z_max = 300
 texture = ExtResource("3_jwimw")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+shape = SubResource("CircleShape2D_1r4mh")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
