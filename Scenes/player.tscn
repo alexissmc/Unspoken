@@ -172,6 +172,7 @@ texture = ExtResource("3_jwimw")
 shape = SubResource("CircleShape2D_1r4mh")
 
 [node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 3.018
 
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.25
