@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0521ib75ubau"]
+
+[ext_resource type="Texture2D" uid="uid://cth1a3qwy3jk7" path="res://Assets/screengameover.jpg" id="1_w6lr3"]
+[ext_resource type="FontFile" uid="uid://ts801iqilg8m" path="res://Assets/Fonts/PixicaMono-Bold.ttf" id="2_jyo83"]
+[ext_resource type="FontFile" uid="uid://b5ya110t74b8r" path="res://Assets/Fonts/Pixica-Regular.ttf" id="3_74jnx"]
+[ext_resource type="Texture2D" uid="uid://bjjeo7m11er4o" path="res://Assets/Sprites/green_overlined.png" id="4_5gmxr"]
+[ext_resource type="Script" path="res://Scripts/gameover.gd" id="5_ybc0i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmsjk"]
+line_spacing = 4.0
+font = ExtResource("2_jyo83")
+font_size = 120
+font_color = Color(0.584314, 0.894118, 0.666667, 1)
+shadow_size = 6
+shadow_color = Color(1, 1, 1, 0.65098)
+
+[sub_resource type="Theme" id="Theme_pwfoh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5lopa"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("4_5gmxr")
+region_rect = Rect2(14, 12, 36, 12)
+
+[sub_resource type="Theme" id="Theme_wfx01"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2qfr"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("4_5gmxr")
+region_rect = Rect2(14, 12, 36, 12)
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.325441, 0.325441, 0.325441, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w6lr3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -183.0
+offset_right = 102.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_qmsjk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381944
+anchor_top = 0.569444
+anchor_right = 0.617188
+anchor_bottom = 0.992284
+offset_top = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pwfoh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_74jnx")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5lopa")
+text = "Restart
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_wfx01")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_74jnx")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_g2qfr")
+text = "Quit"
+script = ExtResource("5_ybc0i")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Quit" method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_pressed"]
