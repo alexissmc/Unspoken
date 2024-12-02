@@ -178,7 +178,7 @@ texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_54n5b")
 animation = &"idle_move"
-frame_progress = 0.185156
+frame_progress = 0.223983
 offset = Vector2(0, -6)
 
 [node name="detection_area" type="Area2D" parent="."]
