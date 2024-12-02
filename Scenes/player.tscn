@@ -147,9 +147,9 @@ script = ExtResource("1_0bby8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_13g0u")
-animation = &"walk_down"
+animation = &"fight"
 autoplay = "walk_down"
-frame_progress = 0.354136
+frame_progress = 0.190632
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -172,7 +172,12 @@ texture = ExtResource("3_jwimw")
 shape = SubResource("CircleShape2D_1r4mh")
 
 [node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.25
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]

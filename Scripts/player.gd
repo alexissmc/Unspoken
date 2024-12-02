@@ -5,6 +5,9 @@ var enemy_attack_cooldown = true
 var health = 100
 var player_alive = true
 
+var attack_ip = false
+
+var current_dir = "none"
 
 var Door = false
 
@@ -26,6 +29,14 @@ func set_start_position(new_position: Vector2):
 func _physics_process(delta):
 	
 	Open_Door()
+	enemy_attack()
+	attack()
+	
+	if health <= 0:
+		player_alive= false
+		health = 0
+		print("you are dead")
+		get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 	
 
 	var direction = Vector2.ZERO
@@ -47,13 +58,20 @@ func _physics_process(delta):
 	
 	if direction != Vector2.ZERO:
 		if direction.x > 0:
+			current_dir = "walk_right"
 			sprite.play("walk_right")
 		elif direction.x < 0:
-			sprite.play("walk_left")
+			current_dir = "walk_left"
+			if attack_ip == false:
+				sprite.play("walk_left")
 		elif direction.y > 0:
-			sprite.play("walk_down")
+			current_dir = "walk_left"
+			if attack_ip == false:
+				sprite.play("walk_down")
 		elif direction.y < 0:
-			sprite.play("walk_up")
+			current_dir = "walk_left"
+			if attack_ip == false:
+				sprite.play("walk_up")
 	else:
 		
 		if sprite != null:
@@ -88,3 +106,37 @@ func enemy_attack():
 
 func _on_attack_cooldown_timeout() -> void:
 	enemy_attack_cooldown = true
+	
+func attack():
+	var dir = current_dir
+	if Input.is_action_just_pressed("attack"):
+		Global.player_current_attack = true
+		attack_ip = true
+		if dir == "walk_right":
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("fight")
+			$deal_attack_timer.start()
+		if dir == "walk_left":
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play("fight")
+			$deal_attack_timer.start()
+		if dir == "walk_down":
+			$AnimatedSprite2D.play("fight")
+			$deal_attack_timer.start()
+		if dir == "walk_up":
+			$AnimatedSprite2D.play("fight")
+			$deal_attack_timer.start()
+			
+			
+			
+			
+		
+	
+	
+
+
+func _on_deal_attack_timer_timeout() -> void:
+	$deal_attack_timer.stop()
+	Global.player_current_attack = false
+	attack_ip = false
+	
