@@ -99,11 +99,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_yxxda")
 text = "Quit"
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-anchor_left = 0.59375
-anchor_top = 0.229938
-anchor_right = 0.958333
-anchor_bottom = 0.376543
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.592882
+anchor_top = 0.199074
+anchor_right = 0.957465
+anchor_bottom = 0.345679
 offset_bottom = -1.52588e-05
 text = "UNSPOKEN"
 label_settings = SubResource("LabelSettings_8jldd")
