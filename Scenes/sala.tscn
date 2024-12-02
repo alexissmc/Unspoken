@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="4_o2dxt"]
 [ext_resource type="Texture2D" uid="uid://cgag03evuoqw" path="res://Assets/Sprites/outdoors.png" id="5_0gnkm"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="6_en5ie"]
-[ext_resource type="PackedScene" uid="uid://caw26dfhjubdv" path="res://Scenes/enemy.tscn" id="7_t3hjr"]
+[ext_resource type="PackedScene" uid="uid://mb6ypfen0jtq" path="res://Scenes/enemy.tscn" id="7_t3hjr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2347"]
 size = Vector2(321.5, 64)
