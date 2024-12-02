@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b63t05w75o05i"]
+[gd_scene load_steps=10 format=3 uid="uid://bvri624qg088o"]
 
 [ext_resource type="Script" path="res://Scripts/ninafantasma.gd" id="1_kox5p"]
 [ext_resource type="Texture2D" uid="uid://t8d0c4e5mqcq" path="res://Assets/Sprites/fantasma.png" id="2_qysdi"]
@@ -59,9 +59,6 @@ radius = 70.0071
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02d0f"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yi0gb"]
-radius = 19.3448
-
 [node name="ninafantasma" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_kox5p")
@@ -83,15 +80,5 @@ shape = SubResource("CircleShape2D_wdrod")
 position = Vector2(1, 22)
 shape = SubResource("CircleShape2D_02d0f")
 
-[node name="enemyhitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyhitbox"]
-shape = SubResource("CircleShape2D_yi0gb")
-
-[node name="take_damage_cooldown" type="Timer" parent="."]
-
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="enemyhitbox" to="." method="_on_enemyhitbox_body_entered"]
-[connection signal="body_exited" from="enemyhitbox" to="." method="_on_enemyhitbox_body_exited"]
-[connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]

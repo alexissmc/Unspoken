@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://x74rfevycqhh"]
+[gd_scene load_steps=20 format=3 uid="uid://x74rfevycqhh"]
 
 [ext_resource type="Texture2D" uid="uid://c1u75ba54sln5" path="res://Assets/Maps/Cuarto_padres.png" id="1_lla5c"]
 [ext_resource type="Script" path="res://Scripts/cuarto_padres.gd" id="1_wmdij"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="2_73r41"]
 [ext_resource type="Texture2D" uid="uid://bpxg8085lrgpa" path="res://Assets/Sprites/Tilemap.png" id="3_jjqek"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="4_6yunt"]
+[ext_resource type="PackedScene" uid="uid://glsohodardpp" path="res://Scenes/papareal.tscn" id="6_xwxmg"]
+[ext_resource type="PackedScene" uid="uid://cymd0fn3pfct3" path="res://Scenes/mama.tscn" id="7_f81qy"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fr1i6"]
 a = Vector2(130, -73)
@@ -612,6 +614,9 @@ sources/0 = SubResource("TileSetAtlasSource_1b13u")
 sources/1 = SubResource("TileSetAtlasSource_ttfad")
 sources/2 = SubResource("TileSetAtlasSource_nyi85")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_me5xr"]
+size = Vector2(108, 4)
+
 [node name="Cuarto_padres" type="Node2D"]
 position = Vector2(574, 321)
 script = ExtResource("1_wmdij")
@@ -658,4 +663,17 @@ layer_0/tile_data = PackedInt32Array(-65538, 0, 11, -2, 0, 12, -65537, 65536, 11
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(-65537, 0, 11, -1, 0, 12, -131072, 65536, 11, -65536, 65536, 12)
 
+[node name="papa" parent="." instance=ExtResource("6_xwxmg")]
+position = Vector2(53, -13)
+
+[node name="mama" parent="." instance=ExtResource("7_f81qy")]
+position = Vector2(83, -13)
+
+[node name="final" type="Area2D" parent="."]
+
+[node name="fin" type="CollisionShape2D" parent="final"]
+position = Vector2(69, 14)
+shape = SubResource("RectangleShape2D_me5xr")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]
