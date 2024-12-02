@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://ht42fwoeduli"]
+[gd_scene load_steps=17 format=4 uid="uid://ht42fwoeduli"]
 
 [ext_resource type="Texture2D" uid="uid://dox586ebwbx50" path="res://Assets/Maps/Banio.png" id="1_4drtc"]
 [ext_resource type="Script" path="res://Scripts/banio.gd" id="1_5r8hq"]
 [ext_resource type="Texture2D" uid="uid://bgnq8nnuygevu" path="res://Assets/Sprites/BitsAndBobs(no_scale).png" id="2_eapd4"]
 [ext_resource type="Texture2D" uid="uid://b385p34kg7415" path="res://Assets/Sprites/indoors.png" id="3_n04hp"]
+[ext_resource type="PackedScene" uid="uid://yt2x7bv06jsx" path="res://Scenes/cuchillo.tscn" id="5_tkuri"]
+[ext_resource type="FontFile" uid="uid://b5ya110t74b8r" path="res://Assets/Fonts/Pixica-Regular.ttf" id="6_0txbt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f8oci"]
 texture = ExtResource("2_eapd4")
@@ -50,7 +52,6 @@ texture = ExtResource("2_eapd4")
 5:3/0 = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
-6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:4/0 = 0
@@ -59,13 +60,10 @@ texture = ExtResource("2_eapd4")
 2:4/0 = 0
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:4/0 = 0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:4/0 = 0
 5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:4/0 = 0
 7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:5/0 = 0
@@ -353,5 +351,21 @@ shape = SubResource("SegmentShape2D_ko5tp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(608, 421)
 shape = SubResource("RectangleShape2D_e281k")
+
+[node name="cuchillo" parent="." instance=ExtResource("5_tkuri")]
+position = Vector2(577, 353)
+rotation = 0.745256
+scale = Vector2(1.2, 1.2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 557.0
+offset_top = 436.0
+offset_right = 662.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0.615686, 0.941176, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_0txbt")
+text = "No olvides el cuchillo
+Lo necesitaras..."
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
