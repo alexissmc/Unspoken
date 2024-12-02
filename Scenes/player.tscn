@@ -147,9 +147,8 @@ script = ExtResource("1_0bby8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_13g0u")
-animation = &"walk_down"
+animation = &"fight"
 autoplay = "walk_down"
-frame_progress = 0.310289
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)

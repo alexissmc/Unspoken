@@ -62,16 +62,16 @@ func _physics_process(delta):
 			sprite.play("walk_right")
 		elif direction.x < 0:
 			current_dir = "walk_left"
-			if attack_ip == false:
-				sprite.play("walk_left")
+			
+			sprite.play("walk_left")
 		elif direction.y > 0:
 			current_dir = "walk_left"
-			if attack_ip == false:
-				sprite.play("walk_down")
+			
+			sprite.play("walk_down")
 		elif direction.y < 0:
 			current_dir = "walk_left"
-			if attack_ip == false:
-				sprite.play("walk_up")
+			
+			sprite.play("walk_up")
 	else:
 		
 		if sprite != null:
@@ -113,7 +113,7 @@ func attack():
 		global.player_current_attack = true
 		attack_ip = true
 		if dir == "walk_right":
-			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("fight")
 			$deal_attack_timer.start()
 		if dir == "walk_left":
@@ -136,7 +136,7 @@ func attack():
 
 
 func _on_deal_attack_timer_timeout() -> void:
-	$deal_attack_timer.stop()
-	global.player_current_attack = false
 	attack_ip = false
+	global.player_current_attack = false
+	$deal_attack_timer.stop()
 	
